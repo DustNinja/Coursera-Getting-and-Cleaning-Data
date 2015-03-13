@@ -65,7 +65,7 @@ all_data  <- rbind(data1, data2)
 all_label <- rbind(label1, label2)
 all_subject <- rbind(subject1, subject2)
 
-# Remove old vectors
+# Remove old dataframes
 #rm(data1)
 #rm(data2)
 #rm(label1)
@@ -108,7 +108,7 @@ names(all_subject) <- "subject"
 
 data <- cbind(all_subject, all_label, all_data)
 
-# Remove old vectors
+# Remove old dataframes
 rm(all_data)
 rm(all_label)
 rm(all_subject)
