@@ -37,8 +37,8 @@ The run_analysis.R script performs the following steps to clean the data:
  9. Combine *all_subject*, *all_label* and *all_data* by column to get a new 10299x68 dataframe, *data*. 
  10. Generate a tidy dataset, *tidy*, with the average of each measurement for each activity and each subject. 
  11. Reformat the *tidy* dataframe column names using the following rules:
-        1) remove parentheses and dashes 
-        2) replace prefix t with time
-        3) replace prefix f with freq (short for frequency)
-        4) apply CamelCasing
+        1) remove parentheses and dashes,
+        2) replace prefix t with time,
+        3) replace prefix f with freq (short for frequency), and
+        4) apply CamelCasing.
  12. Write the *tidy* dataframe out to a file called "averaged_data.txt" in current working directory. 
