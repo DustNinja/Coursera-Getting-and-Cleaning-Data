@@ -39,6 +39,7 @@ The run_analysis.R script performs the following steps to clean the data:
  11. Reformat the *tidy* dataframe column names using the following rules:
         1) remove parentheses and dashes,
         2) replace prefix t with time,
-        3) replace prefix f with freq (short for frequency), and
-        4) apply CamelCasing.
+        3) replace prefix f with freq (short for frequency),
+        4) remove word duplication, and
+        5) apply CamelCasing.
  12. Write the *tidy* dataframe out to a file called "averaged_data.txt" in current working directory. 

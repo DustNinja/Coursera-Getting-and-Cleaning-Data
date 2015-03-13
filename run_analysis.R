@@ -128,6 +128,7 @@ names(tidy) <- gsub("(std\\(\\))", "Std", names(tidy))
 names(tidy) <- gsub("(\\(|\\)|-|,|_)", "", names(tidy))
 names(tidy) <- sub("^f", "Freq", names(tidy))
 names(tidy) <- sub("^t", "Time", names(tidy))
+names(tidy) <- sub("BodyBody", "Body", names(tidy))
 
 # Write tidy output file
 write.table(tidy, "averaged_data.txt", row.name = FALSE)
