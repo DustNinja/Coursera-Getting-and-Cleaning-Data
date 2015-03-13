@@ -66,12 +66,12 @@ all_label <- rbind(label1, label2)
 all_subject <- rbind(subject1, subject2)
 
 # Remove old dataframes
-#rm(data1)
-#rm(data2)
-#rm(label1)
-#rm(label2)
-#rm(subject1)
-#rm(subject2)
+rm(data1)
+rm(data2)
+rm(label1)
+rm(label2)
+rm(subject1)
+rm(subject2)
    
 #-------------------------------------------------------------------------------
 # Extract only the measurements on the mean & std dev for each measurement
