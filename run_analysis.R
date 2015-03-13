@@ -2,7 +2,7 @@
 # Set hard-coded directory path for downloaded data
 #-------------------------------------------------------------------------------
 
-Dir <- "./"
+Dir <- "."
 
 #-------------------------------------------------------------------------------
 # Download data (if necessary)
@@ -65,6 +65,14 @@ all_data  <- rbind(data1, data2)
 all_label <- rbind(label1, label2)
 all_subject <- rbind(subject1, subject2)
 
+# Remove old vectors
+#rm(data1)
+#rm(data2)
+#rm(label1)
+#rm(label2)
+#rm(subject1)
+#rm(subject2)
+   
 #-------------------------------------------------------------------------------
 # Extract only the measurements on the mean & std dev for each measurement
 #-------------------------------------------------------------------------------
@@ -100,6 +108,13 @@ names(all_subject) <- "subject"
 
 data <- cbind(all_subject, all_label, all_data)
 
+# Remove old vectors
+rm(all_data)
+rm(all_label)
+rm(all_subject)
+rm(features)
+rm(activities)
+
 #-------------------------------------------------------------------------------
 # Create a second, independent tidy data set with the average of each variable
 # for each activity and each subject
@@ -111,6 +126,8 @@ tidy <- ddply(data, .(subject,activity), function(x) colMeans(x[,3:ncol(data)]))
 names(tidy) <- gsub("(mean\\(\\))", "Mean", names(tidy))
 names(tidy) <- gsub("(std\\(\\))", "Std", names(tidy))
 names(tidy) <- gsub("(\\(|\\)|-|,|_)", "", names(tidy))
+names(tidy) <- sub("^f", "Freq", names(tidy))
+names(tidy) <- sub("^t", "Time", names(tidy))
 
 # Write tidy output file
 write.table(tidy, "averaged_data.txt", row.name = FALSE)

@@ -20,9 +20,9 @@ The run_analysis.R script does the following:
 2. Combines the subjects, features and labels for both the training and test datasets into a single dataset
 3. Extracts the mean and standard deviations associated with each measurement
 4. Replaces activity identifiers with descriptive activity names
-5. Removes extraneous characters from column names
+5. Reformats column names
 5. Calculates the average of each variable for each activity and each subject
-6. Writes out a tidy dataset called "averaged_data.txt"
+6. Writes out a wide form tidy dataset called "averaged_data.txt"
 
 ## Usage
 In an RStudio or R console:
